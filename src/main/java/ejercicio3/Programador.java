@@ -8,7 +8,7 @@ package ejercicio3;
  *
  * @author cristina
  */
-public class Programador extends Persona {
+public class Programador extends Empleado {
 
     private TipoProgramador tipo;
 
@@ -17,15 +17,12 @@ public class Programador extends Persona {
         this.tipo = TipoProgramador.JUNIOR;
     }
 
-    public Programador(TipoProgramador tipo, String nombre, String nif, int edad) {
-        super(nombre, nif, edad);
+
+    public Programador(TipoProgramador tipo, double salario, String nombre, String nif, int edad) {
+        super(salario, nombre, nif, edad);
         this.tipo = tipo;
     }
-
-    public Programador(TipoProgramador tipo) {
-        this.tipo = tipo;
-    }
-
+    
     public TipoProgramador getTipo() {
         return tipo;
     }
