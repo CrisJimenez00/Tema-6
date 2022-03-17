@@ -9,7 +9,7 @@ package ejercicio11;
  * @author cristina
  */
 public class Romboide extends Figura {
-    
+
     public Romboide(int base, int altura) {
         super(base, altura, "Romboide");
     }

@@ -9,6 +9,7 @@ package ejercicioapuntes;
  * @author cristina
  */
 public class Cocinero extends Trabajador {
+
     protected String partida;
 
     public Cocinero(String partida, String nombre, String apellido, String nif) {
@@ -35,5 +36,5 @@ public class Cocinero extends Trabajador {
     public String toString() {
         return "Cocinero{" + "partida=" + partida + '}';
     }
-    
+
 }

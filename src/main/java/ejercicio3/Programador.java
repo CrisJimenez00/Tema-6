@@ -17,12 +17,11 @@ public class Programador extends Empleado {
         this.tipo = TipoProgramador.JUNIOR;
     }
 
-
     public Programador(TipoProgramador tipo, double salario, String nombre, String nif, int edad) {
         super(salario, nombre, nif, edad);
         this.tipo = tipo;
     }
-    
+
     public TipoProgramador getTipo() {
         return tipo;
     }

@@ -22,7 +22,6 @@ public class Trabajador {
 
     public Trabajador() {
     }
-    
 
     public String getNombre() {
         return nombre;
@@ -53,8 +52,8 @@ public class Trabajador {
         return "Trabajador{" + "nombre=" + nombre + ", apellido=" + apellido + ", nif=" + nif + '}';
     }
 
-    public void cotizar(){
+    public void cotizar() {
         System.out.println("Cotizando como un trabajador");
-    
+
     }
 }
