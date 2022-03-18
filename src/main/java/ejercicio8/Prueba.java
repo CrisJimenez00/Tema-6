@@ -22,7 +22,7 @@ public class Prueba {
         lista.add(new Moneda());
         lista.add(new Moneda());
         for (Azar azar : lista) {
-            System.out.println("EL número salido es: " + azar.lanzar());
+            System.out.println("El número salido es: " + azar.lanzar());
         }
        
     }

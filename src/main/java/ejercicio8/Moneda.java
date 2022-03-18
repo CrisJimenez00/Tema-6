@@ -16,6 +16,8 @@ public class Moneda extends Azar {
 
     public Moneda() {
         random = new Random();
+//        this.posibilidades = 2;
+
     }
 
     @Override
