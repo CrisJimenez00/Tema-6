@@ -22,17 +22,21 @@ public abstract class Cuenta {
         this.cliente = cliente;
     }
 
+    public Cuenta() {
+    }
+    
+
     public String getNumeroCC() {
         return numeroCC;
     }
 
-    public void setNumeroCC(String numeroCC) {
-        if (numeroCC.length() == 20) {
-            this.numeroCC = numeroCC;
-        } else {
-            this.numeroCC = RandomStringUtils.randomNumeric(20).toUpperCase();
-        }
-    }
+//    public void setNumeroCC(String numeroCC) {
+//        if (numeroCC.length() == 20) {
+//            this.numeroCC = numeroCC;
+//        } else {
+//            this.numeroCC = RandomStringUtils.randomNumeric(20).toUpperCase();
+//        }
+//    }
 
     public double getSaldo() {
         return saldo;

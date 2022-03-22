@@ -13,8 +13,8 @@ public class CuentaAhorro extends Cuenta {
     private double interes;
     private double comisionAnual;
 
-    public CuentaAhorro(Persona cliente) {
-        super(cliente);
+    public CuentaAhorro() {
+        super();
     }
 
     public CuentaAhorro(double interes, double comisionAnual, Persona cliente) {

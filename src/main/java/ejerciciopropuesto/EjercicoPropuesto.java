@@ -1,6 +1,7 @@
 package ejerciciopropuesto;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -19,20 +20,15 @@ public class EjercicoPropuesto {
         lista = new ArrayList<>();
     }
 
-    
-    public void rellenarLista() {
-        for (int i = 0; i < 100; i++) {
-            lista.add(i);
-        }
-    }
-
-    public void buscarPorPosicion() {
-
-        int indice = lista.indexOf(5);
-        if (indice != -1) {
-            System.out.println("La búsqueda está en el índice " + indice);
+    public int buscarPorPosicion(ArrayList<Integer> lista, int elemento, int j) {
+        if (j == lista.size() || lista.get(j) == elemento) {
+            if (j == lista.size()) {
+                return -1;
+            } else {
+                return 1;
+            }
         } else {
-            System.out.println("El elemento no existe");
+            return buscarPorPosicion(lista, elemento, j + 1);
         }
     }
 }

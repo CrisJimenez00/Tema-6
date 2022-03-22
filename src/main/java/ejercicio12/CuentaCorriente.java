@@ -13,8 +13,8 @@ public class CuentaCorriente extends Cuenta {
     private double interes;
     private double saldoMin;
 
-    public CuentaCorriente(Persona cliente) {
-        super(cliente);
+    public CuentaCorriente() {
+        super();
     }
 
     public CuentaCorriente(double saldoMin, Persona cliente) {
@@ -55,7 +55,7 @@ public class CuentaCorriente extends Cuenta {
 
     @Override
     public void retirar(double dinero) {
-        if (getSaldo() > (getSaldo() - dinero)) {
+        if (getSaldo() < (getSaldo() - dinero)) {
             setSaldo(getSaldo() - dinero);
         }else{
             System.out.println("No tiene saldo suficiente");
