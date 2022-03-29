@@ -24,8 +24,9 @@ public class Prueba {
         lista.add(new Senador(1500, "Huelva", "Jesuitas", "Alfonso", "Torres"));
         lista.add(new Senador(3500, "Córdoba", "Jesuitas", "Florentino", "Gordillo"));
         for (Legislador legislador : lista) {
-            System.out.println(legislador.getCamara());
-
+//            System.out.println(legislador.getCamara());
+            System.out.println(legislador.toString());
+            
         }
     }
 

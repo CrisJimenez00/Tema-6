@@ -9,11 +9,14 @@ package ejercicio13;
  * @author cristina
  */
 public class Direccion {
+
+    //Atributos
     private String nombreCalle;
     private String nombreCiudad;
     private String codPostal;
     private String nombrePais;
 
+    //Constructores
     public Direccion() {
     }
 
@@ -24,6 +27,7 @@ public class Direccion {
         this.nombrePais = nombrePais;
     }
 
+    //Getters y setters
     public String getNombreCalle() {
         return nombreCalle;
     }
@@ -56,9 +60,10 @@ public class Direccion {
         this.nombrePais = nombrePais;
     }
 
+    //toString
     @Override
     public String toString() {
         return "Direccion{" + "nombreCalle=" + nombreCalle + ", nombreCiudad=" + nombreCiudad + ", codPostal=" + codPostal + ", nombrePais=" + nombrePais + '}';
     }
-    
+
 }

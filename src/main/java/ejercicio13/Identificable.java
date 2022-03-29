@@ -9,6 +9,7 @@ package ejercicio13;
  * @author cristina
  */
 public interface Identificable {
+
     void indetificate();
-    
+
 }
