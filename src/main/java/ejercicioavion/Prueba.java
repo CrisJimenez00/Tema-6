@@ -65,11 +65,13 @@ public class Prueba {
     }
 
     private static int numeroPasajeros(String codigo, ArrayList<Avion> listaVuelos) {
+        int numPasajeros = 0;
         for (int i = 0; i < listaVuelos.size(); i++) {
             if (listaVuelos.get(i).equals(codigo)) {
-                return listaVuelos.get(i).getListaPasajeros().size();
+                numPasajeros = listaVuelos.get(i).getListaPasajeros().size();
             }
         }
+        return numPasajeros;
     }
 
 }
