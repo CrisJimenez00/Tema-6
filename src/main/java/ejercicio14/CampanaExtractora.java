@@ -9,13 +9,15 @@ package ejercicio14;
  *
  * @author Cris
  */
-public class Campana extends Electrodomestico {
+public class CampanaExtractora extends Electrodomestico {
 
     private double decibelios;
 
-    public Campana(double decibelios, double consumo, String modelo) {
+    public CampanaExtractora(double decibelios, double consumo, String modelo) {
         super(consumo, modelo);
-        this.decibelios = decibelios;
+        if (decibelios > 50) {
+            this.decibelios = decibelios;
+        }
     }
 
     public double getDecibelios() {
@@ -23,7 +25,9 @@ public class Campana extends Electrodomestico {
     }
 
     public void setDecibelios(double decibelios) {
-        this.decibelios = decibelios;
+        if (decibelios > 50) {
+            this.decibelios = decibelios;
+        }
     }
 
     @Override

@@ -19,8 +19,8 @@ public class Prueba {
      */
     public static void main(String[] args) {
         //Crear campanas
-        Campana camp1 = new Campana(780, 970, "SSsamsung");
-        Campana camp2 = new Campana(80, 90, "samsung");
+        CampanaExtractora camp1 = new CampanaExtractora(780, 970, "SSsamsung");
+        CampanaExtractora camp2 = new CampanaExtractora(80, 90, "samsung");
 
         //Crear microondas
         Microondas micro1 = new Microondas(150, 70, "deskjet");
@@ -57,27 +57,36 @@ public class Prueba {
         listaFrigo.add(frigo3);
         listaFrigo.add(frigo4);
         listaFrigo.add(frigo5);
+        
+        System.out.println("---------LISTA COMPLETA------");
+        for (int i = 0; i < lista.size(); i++) {
+            System.out.println(lista.get(i).toString());
 
+        }
+        
+        System.out.println("\n-----------LISTA ORDENADA----------------");
+        System.out.println("\n\n-----------MICROONDAS----------------");
         Collections.sort(listaMicro);
         for (Microondas micro : listaMicro) {
             System.out.println(micro.toString());
         }
 
-        System.out.println("---------------------------");
+        System.out.println("\n\n-----------FRIGORIFICOS----------------");
         Collections.sort(listaFrigo);
         for (Frigorifico frigo : listaFrigo) {
             System.out.println(frigo.toString());
         }
 
+        System.out.println("\n\n---------METODOS SILENCIO---------");
         for (Electrodomestico aux : lista) {
             if (aux instanceof Microondas) {
-                ((Microondas) aux).muestra();
+                ((Microondas) aux).silencioso();
             }
             if (aux instanceof Frigorifico) {
-                ((Frigorifico) aux).muestra();
+                ((Frigorifico) aux).silencioso();
             }
-            if (aux instanceof Campana) {
-                System.out.println("soy una campana extractora no tengo el metodo mostrar");
+            if (aux instanceof CampanaExtractora) {
+                System.out.println("soy una campana extractora no tengo el metodo silencioso");
             }
 
         }

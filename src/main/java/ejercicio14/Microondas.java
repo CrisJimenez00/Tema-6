@@ -9,7 +9,7 @@ package ejercicio14;
  *
  * @author Cris
  */
-public class Microondas extends Electrodomestico implements Comparable<Microondas>, MuestraInformacion {
+public class Microondas extends Electrodomestico implements Comparable<Microondas>, Silencioso {
 
     private double vatios;
 
@@ -32,8 +32,8 @@ public class Microondas extends Electrodomestico implements Comparable<Microonda
     }
 
     @Override
-    public void muestra() {
-        System.out.println("La potencia máxima de este microondas es de: " + this.getVatios());
+    public void silencioso() {
+        System.out.println("El microondas de consumo " + getVatios() + " emite 40dB.");
     }
 
     @Override

@@ -9,7 +9,7 @@ package ejercicio14;
  *
  * @author Cris
  */
-public class Frigorifico extends Electrodomestico implements Comparable<Frigorifico>, MuestraInformacion {
+public class Frigorifico extends Electrodomestico implements Comparable<Frigorifico>, Silencioso {
 
     private double litros;
 
@@ -32,8 +32,8 @@ public class Frigorifico extends Electrodomestico implements Comparable<Frigorif
     }
 
     @Override
-    public void muestra() {
-        System.out.println("La capacidad del frigorífico es de: " + this.getLitros());
+    public void silencioso() {
+        System.out.println("el frigorífico de modelo " + getModelo() + " emite 50dB");
     }
 
     public int compareTo(Frigorifico f) {
