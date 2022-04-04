@@ -54,6 +54,9 @@ public class Prueba {
         listaVuelos.add(new Avion("00003", "España", "Portugal", 2, pasajerosVuelo3));
         listaVuelos.add(new Avion("00004", "Argentina", "España", 8, pasajerosVuelo4));
         listaVuelos.add(new Avion("00005", "Noruega", "España", 8, pasajerosVuelo5));
+
+        System.out.println("El avión 00004 tiene: " + numeroPasajeros("00004", listaVuelos) + " pasajeros");
+
     }
 
     private static Map<Avion, Integer> devuelvePasajeros(ArrayList<Avion> listaVuelos) {
@@ -64,14 +67,16 @@ public class Prueba {
         return listaPasajeros;
     }
 
+    //Método el cual sirve para contarbilizar el número de pasajeros de un avión
     private static int numeroPasajeros(String codigo, ArrayList<Avion> listaVuelos) {
-        int numPasajeros = 0;
+
         for (int i = 0; i < listaVuelos.size(); i++) {
-            if (listaVuelos.get(i).equals(codigo)) {
-                numPasajeros = listaVuelos.get(i).getListaPasajeros().size();
+            if (listaVuelos.get(i).getCodVuelo().equalsIgnoreCase(codigo)) {
+                return listaVuelos.get(i).getListaPasajeros().size();
             }
+
         }
-        return numPasajeros;
+        return 0;
     }
 
 }
