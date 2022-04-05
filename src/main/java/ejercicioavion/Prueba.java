@@ -57,23 +57,69 @@ public class Prueba {
         listaVuelos.add(new Avion("00005", "Noruega", "España", 8, pasajerosVuelo5));
 
         System.out.println("El avión 00004 tiene los pasajeros " + numeroPasajeros("00004", listaVuelos));
+
+        System.out.println("\n\n----SIN ORDENAR----");
         Map<String, Integer> listaPasajeros = devuelvePasajeros(listaVuelos);
-        for (int i = 0; i < listaPasajeros.size(); i++) {
-            System.out.println(listaPasajeros.get(i));
-        }
+        System.out.println(listaPasajeros.toString());
+
+        System.out.println("\n\n-----ORDENADO------");
+        Map<String, Integer> listaPasajerosOrdenado = devuelvePasajerosOrdenada(listaVuelos);
+        System.out.println(listaPasajerosOrdenado.toString());
 
     }
 
+    //Método el cual pasándole una lista de vuelos dice cuántos pasajeros van a cada destino
     private static Map<String, Integer> devuelvePasajeros(ArrayList<Avion> listaVuelos) {
-        Map<String, Integer> listaPasajeros = new HashMap<>();//TreeMap para que esté ordenado
+        Map<String, Integer> listaPasajeros = new HashMap<>();
 
         //recorremos para que se añada al map
         for (int i = 0; i < listaVuelos.size(); i++) {
 
-            listaPasajeros.put(listaVuelos.get(i).getCiudadDestino(), listaVuelos.get(i).getListaPasajeros().size());
+            //miramos si el map contiene la clave primaria
+            if (listaPasajeros.containsKey(listaVuelos.get(i).getCiudadDestino())) {
+
+                //En caso de que se repita, borramos y sustituimos valores
+                listaPasajeros.remove(listaVuelos.get(i).getCiudadDestino());
+                listaPasajeros.put(listaVuelos.get(i).getCiudadDestino(),
+                        listaVuelos.get(i).getListaPasajeros().size()
+                        + listaVuelos.get(i).getListaPasajeros().size());
+
+            } else {
+
+                listaPasajeros.put(listaVuelos.get(i).getCiudadDestino(),
+                        listaVuelos.get(i).getListaPasajeros().size());
+
+            }
 
         }
+        return listaPasajeros;
+    }
 
+    //Método el cual pasándole una lista de vuelos dice cuántos pasajeros van a cada destino
+    //de forma ordenada
+    private static Map<String, Integer> devuelvePasajerosOrdenada(ArrayList<Avion> listaVuelos) {
+        Map<String, Integer> listaPasajeros = new TreeMap<>();
+
+        //recorremos para que se añada al map
+        for (int i = 0; i < listaVuelos.size(); i++) {
+
+            //miramos si el map contiene la clave primaria
+            if (listaPasajeros.containsKey(listaVuelos.get(i).getCiudadDestino())) {
+
+                //En caso de que se repita, borramos y sustituimos valores
+                listaPasajeros.remove(listaVuelos.get(i).getCiudadDestino());
+                listaPasajeros.put(listaVuelos.get(i).getCiudadDestino(),
+                        listaVuelos.get(i).getListaPasajeros().size()
+                        + listaVuelos.get(i).getListaPasajeros().size());
+
+            } else {
+
+                listaPasajeros.put(listaVuelos.get(i).getCiudadDestino(),
+                        listaVuelos.get(i).getListaPasajeros().size());
+
+            }
+
+        }
         return listaPasajeros;
     }
 
