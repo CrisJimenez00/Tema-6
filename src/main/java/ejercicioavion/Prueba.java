@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
+import java.util.TreeMap;
 
 /**
  *
@@ -55,28 +56,37 @@ public class Prueba {
         listaVuelos.add(new Avion("00004", "Argentina", "España", 8, pasajerosVuelo4));
         listaVuelos.add(new Avion("00005", "Noruega", "España", 8, pasajerosVuelo5));
 
-        System.out.println("El avión 00004 tiene: " + numeroPasajeros("00004", listaVuelos) + " pasajeros");
+        System.out.println("El avión 00004 tiene los pasajeros " + numeroPasajeros("00004", listaVuelos));
+        Map<String, Integer> listaPasajeros = devuelvePasajeros(listaVuelos);
+        for (int i = 0; i < listaPasajeros.size(); i++) {
+            System.out.println(listaPasajeros.get(i));
+        }
 
     }
 
-    private static Map<Avion, Integer> devuelvePasajeros(ArrayList<Avion> listaVuelos) {
-        Map<Avion, Integer> listaPasajeros = new HashMap<>();
+    private static Map<String, Integer> devuelvePasajeros(ArrayList<Avion> listaVuelos) {
+        Map<String, Integer> listaPasajeros = new HashMap<>();//TreeMap para que esté ordenado
+
+        //recorremos para que se añada al map
         for (int i = 0; i < listaVuelos.size(); i++) {
 
+            listaPasajeros.put(listaVuelos.get(i).getCiudadDestino(), listaVuelos.get(i).getListaPasajeros().size());
+
         }
+
         return listaPasajeros;
     }
 
     //Método el cual sirve para contarbilizar el número de pasajeros de un avión
-    private static int numeroPasajeros(String codigo, ArrayList<Avion> listaVuelos) {
-
+    private static Map<String, ArrayList<Persona>> numeroPasajeros(String codigo, ArrayList<Avion> listaVuelos) {
+        Map<String, ArrayList<Persona>> lista = new HashMap<>();
         for (int i = 0; i < listaVuelos.size(); i++) {
             if (listaVuelos.get(i).getCodVuelo().equalsIgnoreCase(codigo)) {
-                return listaVuelos.get(i).getListaPasajeros().size();
+                lista.put(codigo, listaVuelos.get(i).getListaPasajeros());
             }
 
         }
-        return 0;
+        return lista;
     }
 
 }
