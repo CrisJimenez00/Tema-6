@@ -79,9 +79,8 @@ public class Prueba {
             if (listaPasajeros.containsKey(listaVuelos.get(i).getCiudadDestino())) {
 
                 //En caso de que se repita, borramos y sustituimos valores
-                listaPasajeros.remove(listaVuelos.get(i).getCiudadDestino());
                 listaPasajeros.put(listaVuelos.get(i).getCiudadDestino(),
-                        listaVuelos.get(i).getListaPasajeros().size()
+                        listaPasajeros.get(listaVuelos.get(i).getCiudadDestino())
                         + listaVuelos.get(i).getListaPasajeros().size());
 
             } else {
@@ -107,9 +106,8 @@ public class Prueba {
             if (listaPasajeros.containsKey(listaVuelos.get(i).getCiudadDestino())) {
 
                 //En caso de que se repita, borramos y sustituimos valores
-                listaPasajeros.remove(listaVuelos.get(i).getCiudadDestino());
                 listaPasajeros.put(listaVuelos.get(i).getCiudadDestino(),
-                        listaVuelos.get(i).getListaPasajeros().size()
+                        listaPasajeros.get(listaVuelos.get(i).getCiudadDestino())
                         + listaVuelos.get(i).getListaPasajeros().size());
 
             } else {
